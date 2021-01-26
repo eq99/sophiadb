@@ -12,6 +12,7 @@ class Base:
   SECRET_KEY = environ.get('SECRET_KEY')
   SESSION_COOKIE_NAME = environ.get('SESSION_COOKIE_NAME')
   FLASK_APP = environ.get('FLASK_APP')
+  SQLALCHEMY_TRACK_MODIFICATIONS = False
   
 class Product(Base):
   FLASK_ENV = 'production'
@@ -19,7 +20,6 @@ class Product(Base):
   TESTING = False
   SQLALCHEMY_DATABASE_URI = environ.get('PRODUCT_DATABASE_URI')
   SQLALCHEMY_ECHO = False
-  SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 class Dev(Base):
   FLASK_ENV = 'development'
@@ -27,7 +27,10 @@ class Dev(Base):
   TESTING = True
   SQLALCHEMY_DATABASE_URI = environ.get('DEV_DATABASE_URI')
   SQLALCHEMY_ECHO = True
-  SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+class SMS:
+  APPID = environ.get('SMS_APPID')
+  APPKEY = environ.get('SMS_APPKEY')
 
 
 

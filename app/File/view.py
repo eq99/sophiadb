@@ -119,5 +119,5 @@ class FileAPI(Resource):
 
 
 
-api.add_resource(FilesAPI, '/course/<course_id>/files')
-api.add_resource(FileAPI, '/course/<course_id>/file/<file_id>')
+# api.add_resource(FilesAPI, '/course/<course_id>/files')
+# api.add_resource(FileAPI, '/course/<course_id>/file/<file_id>')
